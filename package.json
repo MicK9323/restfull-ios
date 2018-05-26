@@ -1,0 +1,28 @@
+{
+  "name": "restfull-ios",
+  "version": "1.0.0",
+  "description": "RestFull Services for iOS project",
+  "main": "services.js",
+  "scripts": {
+    "start": "nodemon services.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MicK9323/restfull-ios.git"
+  },
+  "author": "Miguel Cortegana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MicK9323/restfull-ios/issues"
+  },
+  "homepage": "https://github.com/MicK9323/restfull-ios#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
