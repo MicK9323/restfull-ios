@@ -2,7 +2,7 @@ var Usuario = require('../models/usuario');
 
 exports.test = (req,res) => {
     res.status(200).json({
-        ok:true,
+        success:true,
         mensaje:'Api a la espera de peticiones!!'
     })
 };
@@ -20,11 +20,15 @@ exports.usuario_create = (req,res) => {
     usuario.save( (err, obj) =>{
         if(err){
             res.status(500).json({
-                ok:false,
+                success:false,
                 mensaje:'Error al intentar registrar el usuario'
             })
         }else{
-            res.status(200).json(obj);
+            res.status(200).json({
+                success: true,
+                mensaje: 'Registro exitoso',
+                usuario: obj
+            });
         }
     });
 }
@@ -43,10 +47,14 @@ exports.usuario_login = (req,res) => {
             })
         }else{
             if(obj){
-                res.status(200).json(obj);
+                res.status(200).json({
+                    success: true,
+                    mensaje: 'Usuario Autenticado',
+                    usuario: obj
+                });
             }else{
                 res.status(401).json({
-                    ok:false,
+                    success:false,
                     mensaje:'Credenciales incorrectas'
                 });
             }
