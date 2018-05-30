@@ -13,7 +13,7 @@ La ruta base del proyecto es:
 <https://mongoios-services.azurewebsites.net/api>
 
 ### TEST
-Para comprobar que el servidor esta oyendo las peticiones que realizamos se puede testear haciendo una peticion GET a la siguiente ruta:
+Para comprobar que el servidor esta oyendo las peticiones que realizamos se puede testear haciendo una peticion GET al siguiente endpoint:
 
 <https://mongoios-services.azurewebsites.net/api/test>
 
@@ -28,7 +28,7 @@ Deberia mostrar lo siguiente como respuesta:
 ## USUARIOS
 ***
 ### LOGIN
-Para autenticar un usuario en la aplicación se deberá hacer una petición POST a la siguiente ruta:
+Para autenticar un usuario en la aplicación se deberá hacer una petición POST al siguiente endpoint:
 
 <https://mongoios-services.azurewebsites.net/api/usuarios/login>
 
@@ -62,9 +62,11 @@ Enviando en el cuerpo de la peticion los parametros correo y clave.
 ~~~
 
 ### REGISTRO
-Para registrar un nuevo usuario la petición POST deberá apuntar a la siguiente ruta:
+Para registrar un nuevo usuario la petición POST deberá apuntar al endpoint:
 
-<https://mongoios-services.azurewebsites.net/api/usuarios/create>
+<https://mongoios-services.azurewebsites.net/api/usuarios>
+
+Deberemos enviar los atributos dni, nombre, apellido, direccion, correo y clave en el cuerpo de la petición.
 
 El cuerpo de la respuesta al registrar un nuevo usuario sera:
 
