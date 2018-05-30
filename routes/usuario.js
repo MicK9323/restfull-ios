@@ -8,7 +8,7 @@ var usuario_controller = require('../controllers/usuario');
 router.get('/test',usuario_controller.test);
 
 // Ruta para registrar usuario
-router.post('/usuarios/create',usuario_controller.usuario_create);
+router.post('/usuarios',usuario_controller.usuario_create);
 
 // Ruta para logear usuario
 router.post('/usuarios/login',usuario_controller.usuario_login);
