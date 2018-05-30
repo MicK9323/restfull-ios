@@ -1,7 +1,6 @@
 # API REST
 
 API Rest construida con NodeJS y MongoDB e implementada en Azure para el proyecto de Aplicaciones Moviles II (iOS).
-[!][http://www.mcaproyectos.com/public_images/mongo.jpg]
 ***
 
 ## RUTAS
