@@ -1,4 +1,4 @@
-var Usuario = require('../models/usuario');
+var Usuario = require('../models/usuario.model');
 
 exports.test = (req,res) => {
     res.status(200).json({
@@ -42,7 +42,7 @@ exports.usuario_login = (req,res) => {
     Usuario.findOne({correo: usuario.correo, clave: usuario.clave},(err, obj) => {
         if(err){
             res.status(500).json({
-                ok:false,
+                success:false,
                 mensaje:'Error de conexión al servidor'
             })
         }else{

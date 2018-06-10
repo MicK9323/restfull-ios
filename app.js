@@ -4,7 +4,8 @@ var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
 
 // Importar rutas de peticion para usuario
-var usuario_routes = require('./routes/usuario');
+var usuario_routes = require('./routes/usuario.route');
+var product_routes = require('./routes/producto.route');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyparser.urlencoded({extended:false}));
 
 // Rutas
 app.use('/api',usuario_routes);
+app.use('/api',product_routes);
 
 var puerto = process.env.PORT || 3546;
 
