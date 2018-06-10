@@ -79,7 +79,7 @@ exports.FindByID = (req, res) => {
     Producto.findById({
             "_id": id
         })
-        .select("_id nombre imagen precio tipo")
+        .select("_id nombre descripcion imagen precio tipo")
         .populate('tipo')
         .exec()
         .then(result => {
