@@ -85,3 +85,339 @@ El cuerpo de la respuesta al registrar un nuevo usuario sera:
     }
 }
 ~~~
+
+## PRODUCTOS
+***
+### CATEGORIAS
+Para listar las categorias existentes, realizar una petición GET al siguiente endpoint
+
+<https://mongoios-services.azurewebsites.net/api/products/categories>
+~~~
+{
+    "success": true,
+    "mensaje": null,
+    "result": [
+        {
+            "_id": "5b1cbbec36d4773e4c83ea3c",
+            "categoria": "Bebidas"
+        },
+        {
+            "_id": "5b1cbc0c36d4773e4c83ea3d",
+            "categoria": "Alimentos"
+        }
+    ]
+}
+~~~
+
+### SUBCATEGORIAS
+Para listar las subcategorias existentes, realizar una petición GET al siguiente endpoint
+
+<https://mongoios-services.azurewebsites.net/api/products/types>
+~~~
+{
+    "success": true,
+    "mensaje": null,
+    "result": [
+        {
+            "_id": "5b1cedf036d4773e4c83eb1f",
+            "tipo": "Bebidas de Temporada",
+            "categoria": {
+                "_id": "5b1cbbec36d4773e4c83ea3c",
+                "categoria": "Bebidas"
+            }
+        },
+        {
+            "_id": "5b1cedf036d4773e4c83eb20",
+            "tipo": "Bebidas A Base De Espresso",
+            "categoria": {
+                "_id": "5b1cbbec36d4773e4c83ea3c",
+                "categoria": "Bebidas"
+            }
+        },
+        {
+            "_id": "5b1cedf036d4773e4c83eb21",
+            "tipo": "Frappuccino",
+            "categoria": {
+                "_id": "5b1cbbec36d4773e4c83ea3c",
+                "categoria": "Bebidas"
+            }
+        },
+        {
+            "_id": "5b1cedf036d4773e4c83eb22",
+            "tipo": "Alternativas Al Cafe",
+            "categoria": {
+                "_id": "5b1cbbec36d4773e4c83ea3c",
+                "categoria": "Bebidas"
+            }
+        },
+        {
+            "_id": "5b1cedf036d4773e4c83eb23",
+            "tipo": "Novedades",
+            "categoria": {
+                "_id": "5b1cbc0c36d4773e4c83ea3d",
+                "categoria": "Alimentos"
+            }
+        },
+        {
+            "_id": "5b1cedf036d4773e4c83eb24",
+            "tipo": "Sandwiches",
+            "categoria": {
+                "_id": "5b1cbc0c36d4773e4c83ea3d",
+                "categoria": "Alimentos"
+            }
+        },
+        {
+            "_id": "5b1cedf036d4773e4c83eb25",
+            "tipo": "Postres",
+            "categoria": {
+                "_id": "5b1cbc0c36d4773e4c83ea3d",
+                "categoria": "Alimentos"
+            }
+        }
+    ]
+}
+~~~
+
+### BUSCAR POR CATEGORIA
+Para buscar los productos de una categoria enviar en el body del request POST el id de la categoria mediante un parametro "categoria"   
+Endpoint: <https://mongoios-services.azurewebsites.net/api/products/categories>
+~~~
+{
+    "success": true,
+    "mensaje": null,
+    "result": [
+        {
+            "_id": "5b1cffea36d47744e4fbb0ad",
+            "nombre": "Chiken Panino",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb23",
+                "tipo": "Novedades",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0ae",
+            "nombre": "Muffin",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb23",
+                "tipo": "Novedades",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0af",
+            "nombre": "Chicken Ciabatta",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb24",
+                "tipo": "Sandwiches",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0b0",
+            "nombre": "Capresse Sandwiches",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb24",
+                "tipo": "Sandwiches",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0b1",
+            "nombre": "Croissant Mixto",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb24",
+                "tipo": "Sandwiches",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0b2",
+            "nombre": "Triple Pollo Sandwiches",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb24",
+                "tipo": "Sandwiches",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0b3",
+            "nombre": "Brioche Campesino",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb24",
+                "tipo": "Sandwiches",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0b4",
+            "nombre": "Panino Vesubio",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb24",
+                "tipo": "Sandwiches",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0b5",
+            "nombre": "Pavo y Queso",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb24",
+                "tipo": "Sandwiches",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0b6",
+            "nombre": "Eggmont",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb24",
+                "tipo": "Sandwiches",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0b7",
+            "nombre": "Cinnamon Roll",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb25",
+                "tipo": "Postres",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0b8",
+            "nombre": "Muffin de Manzana",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb25",
+                "tipo": "Postres",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0b9",
+            "nombre": "Muffin de Naranja y chocochips",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb25",
+                "tipo": "Postres",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0ba",
+            "nombre": "Muffin Berries",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb25",
+                "tipo": "Postres",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0bb",
+            "nombre": "Croissant francés",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb25",
+                "tipo": "Postres",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb0bc",
+            "nombre": "Galleta de avena & pasas",
+            "imagen": "http://www.mcaproyectos.com/ios/alimentos/muffin.jpg",
+            "precio": 2,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb25",
+                "tipo": "Postres",
+                "categoria": "5b1cbc0c36d4773e4c83ea3d"
+            }
+        }
+    ]
+}
+~~~
+
+### BUSCAR POR SUBCATEGORIA
+Para buscar los productos de una subcategoria enviar en el body del request de una peticion POST el id de la subcategoria mediante un parametro "tipo".   
+Endpoint: <https://mongoios-services.azurewebsites.net/api/products/types>
+~~~
+{
+    "success": true,
+    "mensaje": null,
+    "result": [
+        {
+            "_id": "5b1cffea36d47744e4fbb096",
+            "nombre": "Cappuccino",
+            "imagen": "http://www.mcaproyectos.com/ios/bebidas/cappuccino.jpg",
+            "precio": 1.5,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb1f",
+                "tipo": "Bebidas de Temporada",
+                "categoria": "5b1cbbec36d4773e4c83ea3c"
+            }
+        },
+        {
+            "_id": "5b1cffea36d47744e4fbb097",
+            "nombre": "Manjar Blanco Cappuccino",
+            "imagen": "http://www.mcaproyectos.com/ios/bebidas/cappuccino.jpg",
+            "precio": 1.5,
+            "tipo": {
+                "_id": "5b1cedf036d4773e4c83eb1f",
+                "tipo": "Bebidas de Temporada",
+                "categoria": "5b1cbbec36d4773e4c83ea3c"
+            }
+        }
+    ]
+}
+~~~
+
+### BUSCAR POR ID
+Para buscar un producto por su ID enviar este como un parametro "id" dentro del body de una peticion POST al endpoint:   
+<https://mongoios-services.azurewebsites.net/api/products/id>
+~~~
+{
+    "success": true,
+    "mensaje": null,
+    "result": {
+        "_id": "5b1cffea36d47744e4fbb096",
+        "nombre": "Cappuccino",
+        "descripcion": "cafe con leche y espuma de leche",
+        "imagen": "http://www.mcaproyectos.com/ios/bebidas/cappuccino.jpg",
+        "precio": 1.5,
+        "tipo": {
+            "_id": "5b1cedf036d4773e4c83eb1f",
+            "tipo": "Bebidas de Temporada",
+            "categoria": "5b1cbbec36d4773e4c83ea3c"
+        }
+    }
+}
+~~~
