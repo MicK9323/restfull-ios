@@ -88,6 +88,9 @@ El cuerpo de la respuesta al registrar un nuevo usuario sera:
 
 ## PRODUCTOS
 ***
+### PRODUCTOS
+Para listar todos los productos realizar una peticion GET al siguiente endpoint:   
+<https://mongoios-services.azurewebsites.net/api/products/all>
 ### CATEGORIAS
 Para listar las categorias existentes, realizar una petición GET al siguiente endpoint
 
