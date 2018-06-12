@@ -7,6 +7,8 @@ var products_controller = require('../controllers/productos.controller');
 router.get('/products/categories',products_controller.FindCategories);
 // Obtener tipos
 router.get('/products/types',products_controller.FindTypes);
+// Obtener todos los productos
+router.get('/products/all',products_controller.ProductsList);
 // Buscar por categoria
 router.post('/products/categories',products_controller.FindByCategory);
 // Buscar por tipo

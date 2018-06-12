@@ -12,10 +12,24 @@ exports.FindCategories = (req, res) => {
             let response = new Response(true, null, result);
             res.status(200).json(response);
         }).catch(error => {
-            let response = new Response(false, Message.ERROR, error)
+            let response = new Response(false, Message.ERROR, error);
             res.status(500).json()
         });
-}
+};
+
+exports.ProductsList = (req,res) => {
+    Producto.find({})
+        .populate({path:'tipo',select:'tipo'})
+        .populate({path:'categoria',select:'categoria'})
+        .exec()
+        .then(result =>{
+            let response = new Response(true,null,result);
+            res.status(200).json(response);
+        }).catch(error => {
+            let response = new Response(false,Message.ERROR,error);
+            res.status(500).json(response);
+        })
+};
 
 exports.FindTypes = (req, res) => {
     Tipo.find({})
@@ -28,7 +42,7 @@ exports.FindTypes = (req, res) => {
             let response = new Response(false, Message.ERROR, error);
             res.status(500).json(response);
         });
-}
+};
 
 exports.FindByCategory = (req, res) => {
     let id = new mongoose.Types.ObjectId(req.body.categoria);
@@ -50,7 +64,7 @@ exports.FindByCategory = (req, res) => {
             let response = new Response(false, Message.ERROR, error);
             res.status(500).json(response);
         });
-}
+};
 
 exports.FindByType = (req, res) => {
     let id = new mongoose.Types.ObjectId(req.body.tipo);
@@ -72,7 +86,7 @@ exports.FindByType = (req, res) => {
             let response = new Response(false, Message.ERROR, error);
             res.status(500).json(response);
         });
-}
+};
 
 exports.FindByID = (req, res) => {
     let id = new mongoose.Types.ObjectId(req.body.id);
@@ -89,4 +103,4 @@ exports.FindByID = (req, res) => {
             let response = new Response(false, Message.ERROR, error);
             res.status(500).json(response);
         });
-}
+};
