@@ -9,12 +9,12 @@ A continuación se describen las rutas que emplearemos, recomiendo probarlas en 
 ### BASE
 La ruta base del proyecto es: 
 
-<https://mongoios-services.azurewebsites.net/api>
+<https://fakebucks.azurewebsites.net/api>
 
 ### TEST
 Para comprobar que el servidor esta oyendo las peticiones que realizamos se puede testear haciendo una peticion GET al siguiente endpoint:
 
-<https://mongoios-services.azurewebsites.net/api/test>
+<https://fakebucks.azurewebsites.net/api/test>
 
 Deberia mostrar lo siguiente como respuesta:
 ~~~
@@ -29,7 +29,7 @@ Deberia mostrar lo siguiente como respuesta:
 ### LOGIN
 Para autenticar un usuario en la aplicación se deberá hacer una petición POST al siguiente endpoint:
 
-<https://mongoios-services.azurewebsites.net/api/usuarios/login>
+<https://fakebucks.azurewebsites.net/api/usuarios/login>
 
 Enviando en el cuerpo de la peticion los parametros correo y clave.
 
@@ -63,7 +63,7 @@ Enviando en el cuerpo de la peticion los parametros correo y clave.
 ### REGISTRO
 Para registrar un nuevo usuario la petición POST deberá apuntar al endpoint:
 
-<https://mongoios-services.azurewebsites.net/api/usuarios>
+<https://fakebucks.azurewebsites.net/api/usuarios>
 
 Deberemos enviar los atributos dni, nombre, apellido, direccion, correo y clave en el cuerpo de la petición.
 
@@ -90,11 +90,11 @@ El cuerpo de la respuesta al registrar un nuevo usuario sera:
 ***
 ### PRODUCTOS
 Para listar todos los productos realizar una peticion GET al siguiente endpoint:   
-<https://mongoios-services.azurewebsites.net/api/products/all>
+<https://fakebucks.azurewebsites.net/api/products/all>
 ### CATEGORIAS
 Para listar las categorias existentes, realizar una petición GET al siguiente endpoint
 
-<https://mongoios-services.azurewebsites.net/api/products/categories>
+<https://fakebucks.azurewebsites.net/api/products/categories>
 ~~~
 {
     "success": true,
@@ -115,7 +115,7 @@ Para listar las categorias existentes, realizar una petición GET al siguiente e
 ### SUBCATEGORIAS
 Para listar las subcategorias existentes, realizar una petición GET al siguiente endpoint
 
-<https://mongoios-services.azurewebsites.net/api/products/types>
+<https://fakebucks.azurewebsites.net/api/products/types>
 ~~~
 {
     "success": true,
@@ -183,7 +183,7 @@ Para listar las subcategorias existentes, realizar una petición GET al siguient
 
 ### BUSCAR POR CATEGORIA
 Para buscar los productos de una categoria enviar en el body del request POST el id de la categoria mediante un parametro "categoria"   
-Endpoint: <https://mongoios-services.azurewebsites.net/api/products/categories>
+Endpoint: <https://fakebucks.azurewebsites.net/api/products/categories>
 ~~~
 {
     "success": true,
@@ -371,7 +371,7 @@ Endpoint: <https://mongoios-services.azurewebsites.net/api/products/categories>
 
 ### BUSCAR POR SUBCATEGORIA
 Para buscar los productos de una subcategoria enviar en el body del request de una peticion POST el id de la subcategoria mediante un parametro "tipo".   
-Endpoint: <https://mongoios-services.azurewebsites.net/api/products/types>
+Endpoint: <https://fakebucks.azurewebsites.net/api/products/types>
 ~~~
 {
     "success": true,
@@ -405,7 +405,7 @@ Endpoint: <https://mongoios-services.azurewebsites.net/api/products/types>
 
 ### BUSCAR POR ID
 Para buscar un producto por su ID enviar este como un parametro "id" dentro del body de una peticion POST al endpoint:   
-<https://mongoios-services.azurewebsites.net/api/products/id>
+<https://fakebucks.azurewebsites.net/api/products/id>
 ~~~
 {
     "success": true,
