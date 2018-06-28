@@ -10,18 +10,13 @@ var product_routes = require('./routes/producto.route');
 var app = express();
 
 // Configuracion de conexion a base de datos
-// mongoose.connect('mongodb://mongoios.documents.azure.com:10255/ios?ssl=true',{
+// mongoose.connect('mongodb://mongobase.documents.azure.com:10255/ios?ssl=true',{
 //     auth:{
-//         user:'mongoios',
-//         password:'s5HcPCQrr11C7tCvb7yuRbpi22HLFt59e9CtabnWSbxEGjxh84HzdE0rqZtPPWkywHTCOuz6gOm8xmcvB0fHuw=='
+//         user:'mongobase',
+//         password:'Rm4ZvMxMXUkLtYzx705wyaGtIDnpLLKXToxczFMLLX56UdooBxFTXbWDYqfkK6wwkB9Hg6cZxy5Eo9j8tf9X7g=='
 //     }
 // })
-mongoose.connect('mongodb://mongobase.documents.azure.com:10255/ios?ssl=true',{
-    auth:{
-        user:'mongobase',
-        password:'Rm4ZvMxMXUkLtYzx705wyaGtIDnpLLKXToxczFMLLX56UdooBxFTXbWDYqfkK6wwkB9Hg6cZxy5Eo9j8tf9X7g=='
-    }
-})
+mongoose.connect('mongodb://admin:abc123abc@ds163680.mlab.com:63680/mcortegana')
 .then( () => console.log('\x1b[32m%s\x1b[0m','Conexion a base de datos correcta') )
 .catch( (error) => console.error(error) );
 mongoose.Promise = global.Promise;
